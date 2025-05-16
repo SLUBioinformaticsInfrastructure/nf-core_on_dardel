@@ -40,6 +40,13 @@ If you want to run a nf-core pipeline that is not nf-core/mag, you need to chang
 
 If you want to change the default location of the working directory or the output directory, change lines 20 and 21, respectively. 
 
+Change permissions on the runscript: 
+
+```{.bash}
+chmod +x runscript.sh
+```
+
+
 <details>
   <summary>More information on the file</summary>
     test text   
