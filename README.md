@@ -76,14 +76,22 @@ pixi run nf-core
 
 ## bonus: increase resources for certain processes
 
-Add another file `nextflow.config`.
+Add another file `nextflow.config`, this one will be automatically detected by nextflow and it's contents applied. It will override the other directives given to the pipeline. 
+
+This will implement a general error strategy, where the process will be retried up to three times if the error exit status indicated a resource problem (exit status between 137 and 140). 
+
+Change the process name, and fill in appropriate values for the runtime, number of cpu's and requested memory (or bettter, just choose the one that is problematic and do not change the other options):
+
 
 ```{.bash}
 process {
-	withName:'KRAKEN2'{
-		time   = 2.h
-		cpus   = 16
-		memory =  90.GB
+	errorStrategy =  { task.exitStatus in 137..140 ? 'retry' : 'terminate' }
+    maxRetries = 3
+
+	withName:'PROCESS_NAME'{
+		time   = { task.attempt > 1 ? task.previousTrace.time * 2 : (2.h) }
+		cpus   = { task.attempt > 1 ? task.previousTrace.cpus * 2 : (16) }
+		memory = { task.attempt > 1 ? task.previousTrace.memory * 2 : (90.GB) }
 	}
 
 }
