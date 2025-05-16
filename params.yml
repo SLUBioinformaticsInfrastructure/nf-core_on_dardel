@@ -1,0 +1,18 @@
+---
+## compute project
+project: compute_project
+## input
+input: samplesheet.csv
+
+## other parameters
+skip_adapter_trimming: true
+kraken2_db: /pdc/software/resources/blastdb/Kraken2_data/latest
+krona_db: /pdc/software/resources/blastdb/kronatools_data/latest/taxonomy.tab
+gtdb_db: ../dbs/release220/
+skip_megahit: true
+skip_quast: true
+skip_metaeuk: true
+binqc_tool: checkm2
+checkm2_db: ../dbs/CheckM2_database/uniref100.KO.1.dmnd
+prokka_with_compliance: true
+prokka_compliance_centre: ngi

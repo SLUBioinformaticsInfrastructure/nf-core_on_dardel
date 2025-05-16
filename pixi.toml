@@ -1,0 +1,14 @@
+[project]
+authors = ["amrei-bp <88709270+amrei-bp@users.noreply.github.com>"]
+channels = ["conda-forge", "bioconda"]
+description = "Creating the environment to run nf-core pipelines on Dardel"
+name = "nf-core_dardel"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+nf-core = { cmd = "runscript.sh" }
+
+[dependencies]
+nextflow = "*"
+nf-core = "*"
