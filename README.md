@@ -49,7 +49,8 @@ chmod +x runscript.sh
 
 <details>
   <summary>More information on the file</summary>
-    The runscript is running the pipeline for you, and also does some automated maintenance in the background.
+	
+The runscript is running the pipeline for you, and also does some automated maintenance in the background.
 
 `set -euo pipefail` tells bash to fail your script at certain errors, to give you more information and avoid issues down the line. More information [here](https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425?permalink_comment_id=3935570).
 
@@ -90,6 +91,8 @@ Run the pipeline with:
 ```{.bash}
 pixi run nf-core
 ```
+
+Here, `nf-core` is the name of the task in the `pixi.toml`file. `pixi run` tells Pixi to execute the task. 
 
 ## bonus: increase resources for certain processes
 
