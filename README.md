@@ -27,7 +27,15 @@ The Pixi file, pixi.toml, we are using here specifies the environment we need to
 
 <details>
   <summary>More information on the file</summary>
-    test text   
+The toml is Pixi's project configuration file. 
+
+The first section, `[project]`, such as authorized sources of packages, the environment name and the platform the environment is running in. 
+
+The second section, `[tasks]`, contains a task called `nf-core` that can be executed with Pixi. The command is to run the bash script called `runscript.sh`.
+
+The third secion, `[dependencies]`, specifies the software we want to have available in the environment. Instead of the asterics one can also specify version numbers. 
+
+More information [here](https://prefix.dev/docs/pixi/configuration).   
 
 </details>
 
