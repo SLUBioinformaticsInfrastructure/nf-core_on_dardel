@@ -34,7 +34,7 @@ The Pixi file, pixi.toml, we are using here specifies the environment we need to
 
 ## adapt the runscript
 
-You need to substitute `path_to_project_directory`on line 58 with the path to the directory on Dardel where you want files to be stored. 
+You need to substitute `path_to_project_directory`on line 65 with the path to the directory on Dardel where you want files to be stored. 
 
 If you want to run a nf-core pipeline that is not nf-core/mag, you need to change to the appropriate pipeline in lines 33 and 34. 
 
