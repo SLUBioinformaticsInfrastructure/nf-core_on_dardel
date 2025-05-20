@@ -49,7 +49,17 @@ chmod +x runscript.sh
 
 <details>
   <summary>More information on the file</summary>
-    test text   
+    The runscript is running the pipeline for you, and also does some automated maintenance in the background.
+
+`set -euo pipefail` tells bash to fail your script at certain errors, to give you more information and avoid issues down the line. More information [here](https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425?permalink_comment_id=3935570).
+
+The next function determines if you are working on Dardel (or Rackham, but that's not important here). This will come in handy later. 
+
+The second function is running the nf-core pipeline. The command for that is the `nextflow run nf-core/XX` etc. Beforehand it sets a number of variables for you. Unless you want to change the location of the work directory and the result directory you do not have to change anything there. 
+
+After the actual run command, still in the same function, the script will clean up the cache for you, delete empty directories, and change permissions so all members of the same project have access to the generated files.
+
+The last bit of the script is printing out the name of the cluster the pipeline is being run on, and then calls the `run_nextflow` function with the appropriate settings. Here you need to set the path to your project directory.   
 
 </details>
 
