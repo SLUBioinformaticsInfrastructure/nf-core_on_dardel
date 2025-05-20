@@ -46,6 +46,13 @@ function run_nextflow {
     # Use `nextflow log` to see the time and state of the last nextflow executions.
     # remove the empty working directories after the cleanup
     find "$WORKDIR" -type d -empty -delete
+    
+    # change permissions so all members of the project can access the files
+    # change the file ownership to group:
+    chgrp --no-dereference --silent --recursive ${GRP} ${PWD}
+    # change permission: group gets user's permissions
+    chmod --silent --recursive g=u ${PWD}
+
 }
 
 # Detect cluster name ( rackham, dardel )
