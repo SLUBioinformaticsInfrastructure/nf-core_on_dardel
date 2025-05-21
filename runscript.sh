@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Adapted from https://github.com/NBISweden/assembly-project-template/pull/21/files
-# Thanks to Mahesh Binzer-Panchal
+# Thanks to Mahesh Binzer-Panchal for developing this script!
 
 set -euo pipefail
 
@@ -48,6 +48,7 @@ function run_nextflow {
     find "$WORKDIR" -type d -empty -delete
     
     # change permissions so all members of the project can access the files
+    # thanks to Karl Johan from PDC support for this useful tidbit!
     # change the file ownership to group:
     chgrp --no-dereference --silent --recursive ${GRP} ${PWD}
     # change permission: group gets user's permissions
