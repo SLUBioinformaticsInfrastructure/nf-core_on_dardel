@@ -15,10 +15,10 @@ function get_cluster_name {
 }
 
 function run_nextflow {
-    PROFILE="${PROFILE:-$1}"           # Profile to use (values: uppmax, dardel)
-    STORAGEALLOC="$2"                  # NAISS storage allocation (path)
-    WORKDIR="${PWD}/nxf-work"          # Nextflow work directory
-    RESULTS="${PWD}/outputs"           # Path to store results from Nextflow
+    PROFILE="${PROFILE:-$1}"                                                               # Profile to use (values: uppmax, dardel)
+    STORAGEALLOC="$2"                                                                      # NAISS storage allocation (path)
+    WORKDIR="${PWD/\/cfs\/klemming\/projects\/supr/$PDC_TMP}/analyses/nxf-work"            # Nextflow work directory, now in the executing persons scratch
+    RESULTS="${PWD}/outputs"                                                               # Path to store results from Nextflow
 
     # Set common path to store all Singularity containers
     export NXF_SINGULARITY_CACHEDIR="${PWD}/analyses/singularity-cache"
