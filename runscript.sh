@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Adapted from https://github.com/NBISweden/assembly-project-template/pull/21/files
-# Thanks to Mahesh Binzer-Panchal for developing this script!
+# Thanks to Mahesh Binzer-Panchal for developing this script and letting us adapt it!
 
 set -euo pipefail
 
