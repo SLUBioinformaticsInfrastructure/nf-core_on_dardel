@@ -70,6 +70,8 @@ echo "Running on HPC=$cluster."
 # Run Nextflow with appropriate settings
 if [ "$cluster" == "dardel" ]; then
     module load PDC apptainer
+    export APPTAINER_CACHEDIR=$PDC_TMP/apptainer/cache
+    export SINGULARITY_CACHEDIR=$PDC_TMP/singularity/cache
     run_nextflow pdc_kth path_to_project_directory
 else 
     echo "Error: unrecognised cluster '$cluster'." >&2
