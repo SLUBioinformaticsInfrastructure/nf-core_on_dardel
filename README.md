@@ -42,11 +42,11 @@ More information [here](https://prefix.dev/docs/pixi/configuration).
 
 ## adapt the runscript
 
-You need to substitute `path_to_project_directory`on line 65 with the path to the directory on Dardel where you want files to be stored. 
+You need to substitute `path_to_project_directory`on line 75 with the path to the directory on Dardel where you want files to be stored. 
 
-If you want to run a nf-core pipeline that is not nf-core/mag, you need to change to the appropriate pipeline in lines 33 and 34. 
+If you want to run a nf-core pipeline that is not nf-core/mag, you need to change to the appropriate pipeline in lines 44 and 45. 
 
-If you want to change the default location of the working directory or the output directory, change lines 20 and 21, respectively. 
+If you want to change the default location of the working directory or the output directory, change lines 28 and 29, respectively. 
 
 Change permissions on the runscript: 
 
